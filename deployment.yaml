@@ -1,0 +1,50 @@
+apiVersion:                                      extensions/v1beta1
+kind:                                            Deployment
+metadata:
+  name:                                          walterspieler
+spec:
+  replicas:                                      2
+  template:
+    metadata:
+      labels:
+        app:                                     walterspieler
+    spec:
+      containers:
+      - name:                                    walterspieler
+        image:                                   gcr.io/matt-walters/walterspieler.com:v0.0.1
+        ports:
+        - containerPort:                         3000
+---
+apiVersion:                                      v1
+kind:                                            Service
+metadata:
+  name:                                          walterspieler-svc
+  labels:
+    app:                                         walterspieler
+spec:
+  type:                                          NodePort
+  ports:
+  - port:                                        3000
+  selector:
+    app:                                         walterspieler
+---
+apiVersion:                                      extensions/v1beta1
+kind:                                            Ingress
+metadata:
+  name:                                          basic-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: walterspieler-ip
+spec:
+  rules:
+    - host:                                      walterspieler.com
+      http:
+        paths:
+        - backend:
+            serviceName:                         walterspieler-svc
+            servicePort:                         3000
+    - host:                                      www.walterspieler.com
+      http:
+        paths:
+        - backend:
+            serviceName:                         walterspieler-svc
+            servicePort:                         3000

@@ -3,6 +3,8 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 
+let port = 3000;
+
 //EXPRESS CONFIG
 app.use(express.static('.'));
 app.use(bodyParser.urlencoded({
@@ -14,6 +16,7 @@ app.use(bodyParser.json({
 }));
 //END EXPRESS CONFIG
 
-app.listen(1312, function() {
-	console.log('Example app listening on port 1312!');
+app.listen(port, function() {
+	console.log(process.env.NODE_ENV);
+	console.log('App listening on port 3000!');
 });
