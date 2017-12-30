@@ -22,7 +22,7 @@ module.exports = (config) => {
 			'text/x-typescript': ['ts']
 		},
 		preprocessors: {
-			'*.js': ['sourcemap'],
+			'**/*.js': ['sourcemap'],
 			'**/*.spec.ts': ['sourcemap', 'webpack']
 		},
 		reporters: ['spec'],
