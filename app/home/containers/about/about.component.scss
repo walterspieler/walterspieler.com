@@ -2,3 +2,21 @@
   border: solid 1px red;
   box-sizing: content-box !important;
 }
+
+.bio {
+  mat-card-title {
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    color: #ff4081;
+    font-weight: 100;
+    letter-spacing: .35rem;
+    &::after {
+      display: block;
+      content: '';
+      height: 1px;
+      margin: .3rem 0 .5rem;
+      width: 3rem;
+      background: #ff4081;
+    }
+  }
+}
