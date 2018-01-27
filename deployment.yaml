@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name:                                    walterspieler
-        image:                                   gcr.io/matt-walters/walterspieler.com:v0.0.2-e
+        image:                                   gcr.io/matt-walters/walterspieler.com:v0.0.3-e
         ports:
         - containerPort:                         443
 ---
@@ -35,6 +35,7 @@ metadata:
   name:                                          basic-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: walterspieler-ip
+    kubernetes.io/ingress.allow-http:            "false"
 spec:
   rules:
     - host:                                      walterspieler.com
@@ -49,3 +50,5 @@ spec:
         - backend:
             serviceName:                         walterspieler-svc
             servicePort:                         80
+  tls:
+    - secretName: tls-secret
