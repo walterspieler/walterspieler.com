@@ -4,17 +4,16 @@ import { Component } from '@angular/core';
     selector: 'app-about',
     styleUrls: ['about.component.scss'],
     template: `
-	<div class="about container" fxLayout="row" fxLayoutWrap fxLayoutAlign="center center">
+	<div class="about container" fxLayout="column" fxLayoutWrap fxLayoutAlign="center center">
 		<mat-card class="item" fxFlex="50" fxFlex.sm="75" fxFlex.xs="100">
-			<div>
-				<div class="mat-display-2" style="text-transform: uppercase;font-weight: 700;margin-bottom: .25em;">Matt Walterspieler</div>
-			</div>
-			<mat-card-header class="bio">
-				<img mat-card-avatar src="/assets/matt.jpg">
-				<mat-card-title>Fullstack Webdeveloper</mat-card-title>
-				<mat-card-subtitle>Paris <span style="color:black;">🇫🇷 🇪🇺</span></mat-card-subtitle>
-			</mat-card-header>
-			<mat-card-content>
+            <mat-card-header class="bio">
+                <img mat-card-avatar src="/assets/matt.jpg">
+				<mat-card-title><h1 class="mat-display-2">{{title}}.</h1></mat-card-title>
+            </mat-card-header>
+            <div class="subtitle">
+                <h2>{{description}}</h2>
+            </div>
+            <mat-card-content>
 				<mat-list dense>
 					<h3 matSubheader>Front-end</h3>
 					<mat-divider></mat-divider>
@@ -40,8 +39,13 @@ import { Component } from '@angular/core';
                     <mat-icon class="linkedin" svgIcon="linkedin-box"></mat-icon> Linkedin
                 </a>
 			</mat-card-actions>
-		</mat-card>
+        </mat-card>
+        <p class="mat-caption">{{disc}}</p>
 	</div>
   `
 })
-export class AboutComponent { }
+export class AboutComponent {
+    title = 'Hello, my name is Matt Walterspieler';
+    description = 'I\'m a full-stack developer && full-time problem solver && forever learner';
+    disc = 'Made in Paris with ❤︎';
+}
