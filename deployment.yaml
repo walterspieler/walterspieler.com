@@ -1,0 +1,62 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: walterspieler
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: walterspieler
+    spec:
+      containers:
+        - name: walterspieler
+          image: gcr.io/matt-walters/walterspieler.com:v1.0.0-b
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: walterspieler-svc
+  labels:
+    app: walterspieler
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: walterspieler
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: basic-ingress
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: 'true'
+    kubernetes.io/tls-acme: 'true'
+    certmanager.k8s.io/cluster-issuer: letsencrypt-production-ci
+    kubernetes.io/ingress.class: 'nginx'
+    kubernetes.io/ingress.global-static-ip-name: walterspieler-lb-ip
+spec:
+  tls:
+    - hosts:
+        - walterspieler.com
+      secretName: walterspieler-production-letsencrypt-ci
+    - hosts:
+        - www.walterspieler.com
+      secretName: www-walterspieler-production-letsencrypt-ci
+  rules:
+    - host: walterspieler.com
+      http:
+        paths:
+          - backend:
+              serviceName: walterspieler-svc
+              servicePort: 80
+    - host: www.walterspieler.com
+      http:
+        paths:
+          - backend:
+              serviceName: walterspieler-svc
+              servicePort: 80
