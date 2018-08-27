@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: walterspieler
-          image: gcr.io/matt-walters/walterspieler.com:v1.0.0-b
+          image: gcr.io/matt-walters/walterspieler.com:v1.0.0-c
           ports:
             - containerPort: 80
 ---
