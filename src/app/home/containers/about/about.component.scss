@@ -1,25 +1,45 @@
-.flexDemoContainer {
-  border: solid 1px red;
-  box-sizing: content-box !important;
+@import 'src/material';
+
+mat-list {
+  .mat-list-item {
+    padding: 1rem 0;
+  }
+}
+
+.mat-card.item {
+  margin: 1rem 1rem 0 1rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  @include mat-elevation(0);
+  border: 1px solid mat-color($app-blue-gray, 100);
 }
 
 .bio {
   mat-card-title {
     margin: 0 0 4px 0;
     text-transform: uppercase;
-    color: #ff4081;
+    color: mat-color($app-blue-gray, 500);
     font-weight: 100;
     letter-spacing: 0.35rem;
+
     &::after {
       display: block;
       content: '';
       height: 1px;
       margin: 0.3rem 0 0.5rem;
       width: 3rem;
-      background: #ff4081;
+      background: mat-color($app-blue-gray, 200);
     }
   }
 }
+
 mat-icon {
   margin-right: 0.5rem;
+}
+
+.mat-caption {
+  text-align: right;
+  color: mat-color($app-blue-gray, 300);
+  margin-top: .25rem;
+  margin-right: 2rem;
 }
