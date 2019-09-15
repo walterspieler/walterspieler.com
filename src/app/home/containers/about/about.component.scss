@@ -33,14 +33,16 @@ mat-list {
   }
 }
 
-mat-icon {
+mat-icon,
+fa-icon {
   margin-right: 0.5rem;
+  font-size: 1rem;
 }
 
 .mat-caption {
   text-align: right;
   color: mat-color($app-blue-gray, 300);
-  margin-top: .25rem;
+  margin-top: 0.25rem;
   margin-right: 2rem;
 }
 
@@ -48,9 +50,8 @@ a {
   color: #48bee8;
 }
 
-
 mat-card-actions {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
 }

@@ -1,11 +1,19 @@
 <div class="about container">
   <mat-card class="item">
     <div>
-      <div class="mat-display-2" style="text-transform: uppercase;font-weight: 700;margin-bottom: .25em;">Matt Walterspieler</div>
+      <div
+        class="mat-display-2"
+        style="text-transform: uppercase;font-weight: 700;margin-bottom: .25em;"
+      >
+        Matt Walterspieler
+      </div>
     </div>
     <mat-card-header class="bio">
-      <img mat-card-avatar src="assets/matt.jpg">
-      <mat-card-title>Lead && Fullstack software engineer <a href="https://www.fundee.fr/" target="_blank">@fundee</a></mat-card-title>
+      <img mat-card-avatar src="assets/matt.jpg" />
+      <mat-card-title
+        >Lead && Fullstack software engineer
+        <a href="https://www.fundee.fr/" target="_blank">@fundee</a></mat-card-title
+      >
       <mat-card-subtitle>Paris <span style="color:black;">🇫🇷 🇪🇺</span></mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
@@ -15,9 +23,7 @@
         <mat-list-item>
           <mat-icon svgIcon="language-javascript"></mat-icon>Javascript (ES 6)
         </mat-list-item>
-        <mat-list-item>
-          <mat-icon svgIcon="angular"></mat-icon>Angular & Angularjs
-        </mat-list-item>
+        <mat-list-item> <mat-icon svgIcon="angular"></mat-icon>Angular & Angularjs </mat-list-item>
         <h3 matSubheader>Back-end</h3>
         <mat-divider></mat-divider>
         <mat-list-item>
@@ -25,33 +31,42 @@
         </mat-list-item>
         <h3 matSubheader>Deployment</h3>
         <mat-divider></mat-divider>
-        <mat-list-item>
-          <mat-icon svgIcon="docker"></mat-icon> Docker
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon svgIcon="ship-wheel"></mat-icon> Kubernetes (K8s)
-        </mat-list-item>
+        <mat-list-item> <fa-icon [icon]="docker"></fa-icon> Docker </mat-list-item>
+        <mat-list-item> <mat-icon svgIcon="ship-wheel"></mat-icon> Kubernetes (K8s) </mat-list-item>
       </mat-list>
     </mat-card-content>
     <mat-card-actions>
+      S/N:
       <a mat-button href="https://twitter.com/mwalterspieler" target="_blank">
-        <mat-icon svgIcon="twitter"></mat-icon> Twitter
+        <fa-icon [icon]="twitter"></fa-icon> Twitter
       </a>
       <a mat-button href="https://github.com/walterspieler" target="_blank">
-        <mat-icon svgIcon="github-circle"></mat-icon>
+        <fa-icon [icon]="github"></fa-icon>
         Github
       </a>
       <a mat-button href="https://www.linkedin.com/in/mattwalters3/" target="_blank">
-        <mat-icon svgIcon="linkedin-box"></mat-icon>
+        <fa-icon [icon]="linkedin"></fa-icon>
         Linkedin
       </a>
       <a mat-button href="https://medium.com/@mwalterspieler_31762" target="_blank">
-        <mat-icon svgIcon="medium"></mat-icon>
+        <fa-icon [icon]="medium"></fa-icon>
         Medium
       </a>
       <a mat-button href="https://www.instagram.com/walters_matt/" target="_blank">
-        <mat-icon svgIcon="instagram"></mat-icon>
+        <fa-icon [icon]="instagram"></fa-icon>
         Instagram
+      </a>
+      <a mat-button href="https://keybase.io/mwalterspieler" target="_blank">
+        <fa-icon [icon]="keybase"></fa-icon>
+        Keybase
+      </a>
+      <a
+        mat-button
+        href="https://stackoverflow.com/users/3918612/matt-walterspieler"
+        target="_blank"
+      >
+        <fa-icon [icon]="stackoverflow"></fa-icon>
+        StackOverFlow
       </a>
     </mat-card-actions>
   </mat-card>
