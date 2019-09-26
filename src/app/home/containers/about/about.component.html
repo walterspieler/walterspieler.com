@@ -20,9 +20,7 @@
       <mat-list dense>
         <h3 matSubheader>Front-end</h3>
         <mat-divider></mat-divider>
-        <mat-list-item>
-          <mat-icon svgIcon="language-javascript"></mat-icon>Javascript
-        </mat-list-item>
+        <mat-list-item> <fa-icon [icon]="js"></fa-icon> Javascript / TypeScript </mat-list-item>
         <mat-list-item> <mat-icon svgIcon="angular"></mat-icon>Angular & Angularjs </mat-list-item>
         <h3 matSubheader>Back-end</h3>
         <mat-divider></mat-divider>
@@ -68,6 +66,10 @@
       >
         <fa-icon [icon]="stackoverflow"></fa-icon>
         StackOverFlow
+      </a>
+      <a mat-button href="https://app.pluralsight.com/profile/matt-walterspieler" target="_blank">
+        <fa-icon [icon]="pluralsight"></fa-icon>
+        Pluralsight
       </a>
     </mat-card-actions>
   </mat-card>

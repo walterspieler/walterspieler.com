@@ -9,8 +9,11 @@ import {
   faStackOverflow,
   faInstagram,
   faDocker,
-  faGoogle
+  faGoogle,
+  faJs
 } from '@fortawesome/free-brands-svg-icons';
+
+import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about',
@@ -30,6 +33,8 @@ export class AboutComponent implements OnInit {
   instagram = faInstagram;
   docker = faDocker;
   google = faGoogle;
+  js = faJs;
+  pluralsight = faChalkboardTeacher;
 
   ngOnInit() {}
 }
