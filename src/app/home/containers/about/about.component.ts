@@ -8,7 +8,8 @@ import {
   faKeybase,
   faStackOverflow,
   faInstagram,
-  faDocker
+  faDocker,
+  faGoogle
 } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -28,6 +29,7 @@ export class AboutComponent implements OnInit {
   stackoverflow = faStackOverflow;
   instagram = faInstagram;
   docker = faDocker;
+  google = faGoogle;
 
   ngOnInit() {}
 }
