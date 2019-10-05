@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/cfb16812818c1a4334d6/maintainability)](https://codeclimate.com/github/walterspieler/walterspieler.com/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/cfb16812818c1a4334d6/test_coverage)](https://codeclimate.com/github/walterspieler/walterspieler.com/test_coverage)
+
+
 # Walterspieler
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
